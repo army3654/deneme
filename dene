@@ -1,0 +1,50 @@
+// class yazmaya bu satırda başlıyorum
+
+
+PersonManager manager = new PersonManager();
+
+customer customer = new customer //5- customer adlı class yazıldı  
+{
+    Id = 55,
+    FirstName = "armağan",
+    LastName = "ilgar",
+    Adress = "dasdfasdasdfdfsadf"
+
+};
+student student = new student();
+{
+ 
+}
+manager.Add(customer);
+
+Console.ReadLine();
+
+    
+interface IPerson                  // 1- ilk tanımımız classların içi dolsun diye yapılmış bir oluşum arayüz 
+{
+    int Id { get; set; }
+    string FirstName { get; set; }
+    string LastName { get; set; }
+
+}
+class customer : IPerson     // 2- customer adında bir class tanımladık, içindeki verileri IPerson adlı arayüzden çektik
+{
+    public int Id { get; set ; }
+    public string FirstName { get ; set ; }
+    public string LastName { get ; set ; }
+    public string Adress { get; set; }
+}
+class student : IPerson // 3- student adlı bir class tanımladık içindeki verileri IPerson adlı arayüzden çektik 
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Departmant { get; set; }
+}
+class PersonManager // 4- PersonManager adında bir class tanımladık ve içinde customer adında bir method çağırdık, methodun adını yazdırdık.
+{
+    public void Add(customer customer)
+    {
+  Console.WriteLine(customer.FirstName);
+    }
+}
