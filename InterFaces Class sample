@@ -1,0 +1,41 @@
+DataBase log = new DataBase(); // 4-  3 numarada yazdığın classın tanımını burada yapmak zorundasın syntax ı bu şekilde olmalı.
+
+Students students = new Students // 5- 2 numarada yazdığım classs için gerekli olan veri girişini set ettim 
+{
+    IdNumber = 255646,
+    Name = "Armağan",
+    SurName = "İlgar",
+    Gradution = "SAÜ"
+};
+
+log.Bring(students);// 7- log içinde bring aracılığı ile student classında işlem yapacağımı söyledin.
+Console.ReadLine ();
+
+
+interface Ithink   // 1- ilk yapılacak olan işlem bu tüm classsların içini dolduracak veri burada yazılacak. 
+{
+    int IdNumber { get; set; }
+    string Name { get; set; }
+    string SurName { get; set; }
+    string Gradution { get; set; }
+
+}
+
+
+class Students : Ithink // 2- interface' ye bağlı bir class yazdık, class içini interfaceden aldığımız veriler ile doldurduk.
+
+{
+    public int IdNumber { get; set; }
+    public string Name { get; set; }
+    public string SurName { get; set; }
+    public string Gradution { get; set; }
+}
+
+class DataBase// 3- daha önce 2 numarada yazdığımız class ile alakalı işlem yapabilmek için yeni bir class yazdık ve
+              // içine bir method yazarak işlem yapmak istediğimiz classı çağırdık.
+{
+    public void Bring(Students students)// 6- Bring ile işlem yapacağımı Söyledim
+    {
+        Console.WriteLine(students.Name);
+    }
+}
