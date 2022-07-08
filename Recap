@@ -1,0 +1,38 @@
+
+CustomerManager CustomerManager = new CustomerManager(); // Ana class kullanılabilsin diye newledik
+CustomerManager.add();// ana classdan add methodunu  çağırdık.
+Console.ReadLine();
+CustomerManager.logger=new DataBaseLogger();
+
+class CustomerManager// ana class
+{
+    public ILogger logger { get; set; }
+    public void add()
+    {
+        logger.log();
+        Console.WriteLine("customer added");
+    }
+}
+// Kullanılacak class 1 numara
+class DataBaseLogger: ILogger
+{
+    public void log()
+    {
+        Console.WriteLine("logged");
+    }
+}
+
+class FileLogger : ILogger
+{
+    public void log()
+    {
+        Console.WriteLine("logged to filed");
+    }
+}
+
+
+interface ILogger
+{
+    void log();
+
+}
